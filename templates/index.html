@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Emotion Detection AI</title>
+
+    <!-- Fonts & Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Chart -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<div class="glass">
+    <h1><i class="fa-solid fa-face-smile"></i> Emotion AI</h1>
+    <p>Real-time Facial Emotion Detection</p>
+
+    <div class="video-box">
+        <img src="{{ url_for('video') }}">
+    </div>
+
+    <div class="info">
+        <span id="emotion">Emotion: --</span>
+        <span id="confidence">Confidence: --%</span>
+    </div>
+
+    <button onclick="toggleDetect()">
+        <i class="fa-solid fa-power-off"></i> Start / Stop
+    </button>
+
+    <canvas id="chart"></canvas>
+
+    <footer>
+        <i class="fa-solid fa-brain"></i> Powered by AI
+    </footer>
+</div>
+
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
